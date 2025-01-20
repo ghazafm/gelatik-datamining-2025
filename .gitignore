@@ -178,3 +178,4 @@ credentials.json
 **.credentials.*
 **.csv
 
+data/*
