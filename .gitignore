@@ -179,3 +179,5 @@ credentials.json
 **.csv
 
 data/*
+
+**.DS_Store
