@@ -82,7 +82,6 @@ This dataset is collected from a prescribed fire at Sycan Marsh, Oregon, between
 
 - Python 3.x
 - PyTorch
-- OpenCV
 - Matplotlib
 - NumPy
 - torchvision
@@ -115,6 +114,61 @@ Download the **FLAME 3** dataset from [IEEE DataPort](https://ieeedataport.org).
 ├── temp.py
 └── README.md
 ```
+
+---
+
+## Commit Message Guidelines
+
+This project follows the **Conventional Commit** message format. The structure of the commit messages helps maintain a consistent and clear history. Here is the general structure for commit messages:
+
+### Format
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+### Types of Commits
+- **feat**: A new feature for the user.
+- **fix**: A bug fix for the user.
+- **docs**: Documentation changes.
+- **style**: Changes that do not affect the meaning of the code (e.g., formatting).
+- **refactor**: Refactoring code without changing functionality.
+- **perf**: A performance improvement.
+- **test**: Adding or modifying tests.
+- **chore**: Other changes that don't modify the functionality (e.g., updates to build scripts, dependency management).
+- **ci**: Continuous Integration changes.
+- **build**: Changes that affect the build system or external dependencies.
+- **revert**: Reverts a previous commit.
+
+### Examples
+- **feat(dataset): add support for new dataset class**
+- **fix(training): correct learning rate for better convergence**
+- **docs(readme): update project setup section**
+
+### Subject
+The subject should have the following structure:
+```
+<type>(<optional scope>): <subject-description>
+```
+For example, when adding a new endpoint to an API for creating coupons:
+```
+feat(api): Add support to create coupons
+```
+
+- The subject should be in lowercase.
+- It should be concise, with a maximum of 100 characters.
+- Do not end the subject with a period.
+
+
+### Body
+- The body provides additional context to explain why the change was made.
+- It should be wrapped at 72 characters for readability.
+
+### Footer
+- The footer is optional and used for referencing issues or breaking changes.
 
 ---
 
