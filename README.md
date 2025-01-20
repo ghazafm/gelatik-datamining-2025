@@ -13,17 +13,24 @@
    - [Installation](#installation)
    - [Dataset Download](#dataset-download)
    - [File Structure](#file-structure)
-5. [Framework Overview](#framework-overview)
+5. [Commit Message Guidelines](#commit-message-guidelines)
+   - [Format](#format)
+   - [Types of Commits](#types-of-commits)
+   - [Examples](#example-commits)
+   - [Subject](#subject)
+   - [Body](#body)
+   - [Footer](#footer)
+6. [Framework Overview](#framework-overview)
    - [Folder Structure](#folder-structure)
    - [Key Components of the Framework](#key-components-of-the-framework)
    - [Example Workflow](#example-workflow)
-6. [Usage](#usage)
+7. [Usage](#usage)
    - [Example Notebook: `example.ipynb`](#example-notebook-exampleipynb)
    - [Visualize the Image](#visualize-the-image)
-7. [License](#license)
-8. [Citation](#citation)
-9. [Acknowledgments](#acknowledgments)
-10. [Contributors](#contributors)
+8. [License](#license)
+9. [Citation](#citation)
+10. [Acknowledgments](#acknowledgments)
+11. [Contributors](#contributors)
 
 ## Overview
 
@@ -143,7 +150,7 @@ This project follows the **Conventional Commit** message format. The structure o
 - **build**: Changes that affect the build system or external dependencies.
 - **revert**: Reverts a previous commit.
 
-### Examples
+### Example Commits
 - **feat(dataset): add support for new dataset class**
 - **fix(training): correct learning rate for better convergence**
 - **docs(readme): update project setup section**
