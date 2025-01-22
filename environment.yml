@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8
+  - python=3.9
   - pytorch>=1.9.0
   - torchvision
   - pillow
@@ -14,6 +14,7 @@ dependencies:
   - protobuf
   - pylint
   - black
+  - black-jupyter
   - matplotlib
   - numpy
   - pandas
