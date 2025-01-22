@@ -17,8 +17,9 @@
 5. [Code Quality Guideline](#code-quality-guideline)
    - [Code Quality Guideline](#installation)
    - [Usage Pylint](#usage-pylint)
-   - [Pylint Configuration](#pylint-configuration)
+   - [Usage Blackn](#usage-black)
    - [Required Pylint Score](#required-pylint-score)
+   - [Code Formatting with Black](#code-formatting-with-black)
    - [Example Output](#example-output)
 6. [Commit Message Guidelines](#commit-message-guidelines)
    - [Format](#format)
@@ -197,19 +198,7 @@ pip install -e .
 
 ## Code Quality Guideline
 
-This project uses **Pylint** to ensure code quality and maintainability. Pylint is a static code analysis tool for identifying errors in Python code, enforcing coding standards, and finding code smells.
-
-### Installation
-
-To set up Pylint in your development environment, follow these steps:
-
-1. Install Pylint using `pip` (already installed in package):
-
-```bash
-pip install pylint
-```
-
-2. (Optional) Add Pylint to your `requirements.txt` or `environment.yml` for easy installation in the future.
+This project uses **Pylint** and **Black** to ensure code quality, maintainability, and consistent formatting. **Pylint** is a static code analysis tool for identifying errors in Python code, enforcing coding standards, and finding code smells. **Black** is an opinionated code formatter that formats Python code automatically to conform to a consistent style.
 
 ### Usage Pylint
 
@@ -219,26 +208,33 @@ To lint your code using Pylint, you can run the following command in the root di
 pylint *
 ```
 
-This will check all Python files in the all directory for errors and code style violations.
+This will check all Python files in the directory for errors and code style violations.
 
-### Pylint Configuration
+### Usage Black
 
-To customize the linting rules, create a `.pylintrc` file in the root directory of your project. You can generate this file(no needed) by running:
+To automatically format your Python code using Black, run the following command:
 
 ```bash
-pylint --generate-rcfile > .pylintrc
+black .
 ```
 
-Modify the `.pylintrc` file as needed to meet your project's coding standards.
+This will format all Python files in the project directory and its subdirectories.
 
 ### Required Pylint Score
-- All contributors must ensure their code passes Pylint checks with an overall score of at least 9/10.
-- Perfect score of 10/10 is encouraged but not required.
+
+- All contributors must ensure their code passes Pylint checks with an overall score of at least **9/10**.
+- A perfect score of **10/10** is encouraged but not required.
 - Any code that does not meet the required score should be corrected before committing.
 
 This ensures consistent coding standards and high-quality, maintainable code across the project.
 
-### Example Output
+### Code Formatting with Black
+
+- All contributors must format their code using **Black** before committing.
+- Run `black .` to format all files before committing.
+- Black will automatically adjust code formatting, so contributors should ensure that no formatting-related issues are present after using it.
+
+### **Example Output**
 
 Running Pylint will produce output like the following:
 
@@ -250,6 +246,14 @@ src/dataset/flame.py:35:0: C0301: Line too long (110/100) (line-too-long)
 
 ------------------------------------------------------------------
 Your code has been rated at 8.43/10 (previous run: 8.43/10, +0.00)
+```
+
+Running Black will format the code and produce output like the following:
+
+```bash
+reformatted src/dataset/flame.py
+All done! ✨ 🍰 ✨
+1 file reformatted.
 ```
 
 ---
