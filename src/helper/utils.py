@@ -1,5 +1,6 @@
 import os
 import shutil
+import zipfile
 from pathlib import Path
 
 
@@ -14,14 +15,14 @@ def cleanup_folder_structure(img_dir):
         item_path = img_dir / item
         if item_path.is_dir():
             if item == "images":
-                print(f"Found a nested 'images' folder. Flattening structure...")
+                print("Found a nested 'images' folder. Flattening structure...")
                 flatten_images_folder(item_path)
             else:
                 print(f"Found a directory: {item}. Skipping...")
 
         # Remove unwanted __MACOSX folder
         if item == "__MACOSX":
-            print(f"Removing unwanted __MACOSX folder...")
+            print("Removing unwanted __MACOSX folder...")
             macosx_dir = img_dir / item
             shutil.rmtree(macosx_dir)
 
@@ -35,13 +36,11 @@ def flatten_images_folder(nested_folder_path):
     os.rmdir(nested_folder_path)
 
 
-def extract_zip(dir, zip_path: Path) -> None:
-    import zipfile
-
+def extract_zip(output_dir, zip_path: Path) -> None:
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
-        zip_ref.extractall(dir)
+        zip_ref.extractall(output_dir)
 
-    cleanup_folder_structure(dir)
+    cleanup_folder_structure(output_dir)
     zip_path.unlink()
 
 

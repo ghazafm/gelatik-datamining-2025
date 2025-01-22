@@ -1,5 +1,5 @@
+from collections.abc import Callable
 from PIL import Image
-from typing import Callable
 
 
 def transform_image(img: Image, transform: Callable) -> Image:

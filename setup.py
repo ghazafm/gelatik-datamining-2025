@@ -1,10 +1,12 @@
-from setuptools import setup, find_packages
 import pathlib
+from setuptools import setup, find_packages
+
 
 def read_requirements(filename):
     """Parse a requirements.txt file into a list of dependencies."""
     with open(filename, encoding="utf-8") as f:
         return f.read().splitlines()
+
 
 current_dir = pathlib.Path(__file__).parent.resolve()
 long_description = (current_dir / "README.md").read_text(encoding="utf-8")

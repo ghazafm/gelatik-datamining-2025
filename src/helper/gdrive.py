@@ -11,11 +11,11 @@ def authenticate_google_drive():
     """Authenticate and create a Google Drive API client."""
     creds = None
     if os.path.exists("token.json"):
-        creds, project = google.auth.load_credentials_from_file("token.json")
+        creds, _ = google.auth.load_credentials_from_file("token.json")
     else:
         flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
         creds = flow.run_local_server(port=0)
-        with open("token.json", "w") as token:
+        with open("token.json", "w", encoding="utf-8") as token:
             token.write(creds.to_json())
 
     drive_service = build("drive", "v3", credentials=creds)
@@ -48,7 +48,7 @@ def get_file_links(drive_service, folder_id):
 
 def save_to_csv(file_data, filename):
     """Save file links to a CSV file."""
-    with open(filename, mode="w", newline="") as file:
+    with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=["file", "link"])
         writer.writeheader()
         writer.writerows(file_data)

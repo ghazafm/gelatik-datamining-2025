@@ -2,7 +2,7 @@ import os
 import csv
 import torch
 from torch.utils.data import Dataset
-from typing import Any, Callable, Optional, Tuple, Union
+from typing import Any, Callable, Optional, Tuple
 import requests
 from io import BytesIO, StringIO
 from PIL import Image, UnidentifiedImageError
