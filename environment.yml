@@ -19,6 +19,7 @@ dependencies:
   - numpy
   - pandas
   - ipykernel
+  - gdown
   - pip
   - pip:
       - -r requirements.txt
