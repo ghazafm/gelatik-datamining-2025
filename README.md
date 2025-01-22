@@ -13,6 +13,7 @@
    - [Installation](#installation)
    - [Dataset Download](#dataset-download)
    - [File Structure](#file-structure)
+   - [Setting Up the Environment](#setting-up-the-environment)
 5. [Commit Message Guidelines](#commit-message-guidelines)
    - [Format](#format)
    - [Types of Commits](#types-of-commits)
@@ -112,14 +113,88 @@ Download the **FLAME 3** dataset from [IEEE DataPort](https://ieeedataport.org).
 ├── .git/
 ├── data/
 │   └── flame/
-│       └── annotations.csv
+│       ├── annotations.csv
 │       └── images/
 ├── src/
-│   └── notebook/
-│       └── dataset/
-│           └── flame.py
-├── temp.py
-└── README.md
+│   ├── dataset/
+│   │   └── flame.py
+│   ├── helper/
+│   │   ├── image_processing.py
+│   │   ├── utils.py
+│   │   └── downloader.py
+│   └── __pycache__/
+├── notebooks/
+│   └── preprocess/
+│       └── anotate.ipynb
+├── requirements.txt
+├── environment.yml
+├── setup.py
+├── README.md
+└── LICENSE
+```
+
+### Setting Up the Environment
+
+To set up the environment, you can use either **Conda** or **Pip** depending on your preferred package manager.
+
+#### Using Conda
+
+1. Create a Conda environment using the provided `environment.yml` file:
+
+```bash
+conda env create -f environment.yml
+```
+
+2. Activate the environment:
+
+```bash
+conda activate gemastik
+```
+
+3. Install local pakage
+
+```
+pip install -e .
+```
+
+4. Install additional dependencies if required:
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Using Pip
+
+1. Create a virtual environment (optional but recommended):
+
+```bash
+python -m venv venv
+```
+
+2. Activate the virtual environment:
+
+- On macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+- On Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+
+3. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Install local pakage
+
+```
+pip install -e .
 ```
 
 ---
