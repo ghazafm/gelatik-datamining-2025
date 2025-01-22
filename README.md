@@ -88,23 +88,13 @@ This dataset is collected from a prescribed fire at Sycan Marsh, Oregon, between
 
 ### Prerequisites
 
-- Python 3.x
-- PyTorch
-- Matplotlib
-- NumPy
-- torchvision
-
-### Installation
-
-To install the necessary dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+- Python 3.9
+- pip
 
 ### Dataset Download
 
-Download the **FLAME 3** dataset from [IEEE DataPort](https://ieeedataport.org).
+Download the **FLAME 3** dataset from [IEEE DataPort](https://ieeedataport.org).\
+(This can be downloaded automatically when the dataset class is called.)
 
 ### File Structure
 
@@ -204,6 +194,7 @@ pip install -e .
 This project follows the **Conventional Commit** message format. The structure of the commit messages helps maintain a consistent and clear history. Here is the general structure for commit messages:
 
 ### Format
+
 ```
 <type>(<scope>): <subject>
 <BLANK LINE>
@@ -213,6 +204,7 @@ This project follows the **Conventional Commit** message format. The structure o
 ```
 
 ### Types of Commits
+
 - **feat**: A new feature for the user.
 - **fix**: A bug fix for the user.
 - **docs**: Documentation changes.
@@ -226,16 +218,21 @@ This project follows the **Conventional Commit** message format. The structure o
 - **revert**: Reverts a previous commit.
 
 ### Example Commits
+
 - **feat(dataset): add support for new dataset class**
 - **fix(training): correct learning rate for better convergence**
 - **docs(readme): update project setup section**
 
 ### Subject
+
 The subject should have the following structure:
+
 ```
 <type>(<optional scope>): <subject-description>
 ```
+
 For example, when adding a new endpoint to an API for creating coupons:
+
 ```
 feat(api): Add support to create coupons
 ```
@@ -244,12 +241,13 @@ feat(api): Add support to create coupons
 - It should be concise, with a maximum of 100 characters.
 - Do not end the subject with a period.
 
-
 ### Body
+
 - The body provides additional context to explain why the change was made.
 - It should be wrapped at 72 characters for readability.
 
 ### Footer
+
 - The footer is optional and used for referencing issues or breaking changes.
 
 ---
