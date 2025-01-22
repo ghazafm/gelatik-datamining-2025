@@ -1,0 +1,22 @@
+name: gemastik
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch>=1.9.0
+  - torchvision
+  - pillow
+  - requests
+  - setuptools
+  - google-api-python-client
+  - google-auth-oauthlib
+  - protobuf
+  - pylint
+  - black
+  - matplotlib
+  - numpy
+  - pandas
+  - pip
+  - pip:
+      - -r requirements.txt

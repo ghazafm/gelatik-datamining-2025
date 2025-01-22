@@ -1,0 +1,24 @@
+# Include all Python files
+recursive-include src *
+
+# Include README and other documentation files
+include README.md
+include LICENSE
+
+# Include requirements.txt
+include requirements.txt
+
+# Include any other files you want to package, e.g. scripts, config, etc.
+include src/config.yaml
+include src/config.yaml
+
+# Include data files
+recursive-include data *
+
+# Exclude specific files/folders
+exclude src/tests/*
+exclude src/temp/*
+
+# Exclude certain file types (like .pyc, .swp)
+global-exclude *.pyc
+global-exclude *.swp
