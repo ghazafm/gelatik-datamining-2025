@@ -8,6 +8,7 @@ torch
 torchvision
 pylint
 black
+black[jupyter]
 matplotlib
 numpy
 pandas
