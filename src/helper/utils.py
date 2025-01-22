@@ -14,7 +14,7 @@ def cleanup_folder_structure(img_dir):
     for item in os.listdir(img_dir):
         item_path = img_dir / item
         if item_path.is_dir():
-            if item == "images":
+            if "__MACOSX" not in item:
                 print("Found a nested 'images' folder. Flattening structure...")
                 flatten_images_folder(item_path)
             else:
@@ -37,6 +37,7 @@ def flatten_images_folder(nested_folder_path):
 
 
 def extract_zip(output_dir, zip_path: Path) -> None:
+
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(output_dir)
 

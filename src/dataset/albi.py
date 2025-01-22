@@ -22,8 +22,8 @@ class Albi(BaseDataset):
     # pylint: disable=duplicate-code
     def get_default_urls(self) -> dict[str, str]:
         return {
-            "data_url": "https://drive.google.com/file/d/1lEmbEJHXVn7z80fYevjMVdqBo4FdwLpP/view?usp=drive_link",
-            "annotation_url": "https://drive.google.com/file/d/1cVCm9gTWR1ovbhb1lpO8Fx7NqqO7kIFb/view?usp=drive_link",
+            "data_url": "https://drive.google.com/uc?id=1lEmbEJHXVn7z80fYevjMVdqBo4FdwLpP",
+            "annotation_url": "https://drive.google.com/uc?id=1cVCm9gTWR1ovbhb1lpO8Fx7NqqO7kIFb",
         }
 
 

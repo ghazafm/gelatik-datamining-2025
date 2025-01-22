@@ -1,8 +1,8 @@
 from __future__ import annotations
-import csv
 from pathlib import Path
 from typing import Any
 from collections.abc import Callable
+import numpy as np
 import torch
 from torch.utils.data import Dataset
 from PIL import Image, UnidentifiedImageError
@@ -51,10 +51,16 @@ class BaseDataset(Dataset):
 
         # Load annotations
         with open(self.annotation_file, "r", encoding="utf-8") as file:
-            reader = csv.reader(file)
+            reader = np.loadtxt(
+                file,
+                delimiter=",",
+                dtype=str,
+                skiprows=1,
+                usecols=[0, 2, 3, 4, 5],
+            )
             for row in reader:
                 img_path = self.dir / row[0]
-                bbox = [float(x) for x in row[1:]]
+                bbox = [(float(x) if x != "" else 0.0) for x in row[1:]]
                 self.image_paths.append(img_path)
                 self.bounding_boxes.append(bbox)
 
