@@ -8,6 +8,7 @@ from io import BytesIO, StringIO
 from PIL import Image, UnidentifiedImageError
 from pathlib import Path
 
+
 class Albi(Dataset):
     """Custom Dataset for the Flame dataset with images and bounding boxes.
 
@@ -18,14 +19,19 @@ class Albi(Dataset):
     """
 
     def __init__(
-        self, img_link: str = None, annotation_file: str = None, transform: Optional[Callable] = None
+        self,
+        img_link: str = None,
+        annotation_file: str = None,
+        transform: Optional[Callable] = None,
     ):
         if img_link:
             self.img_dir = img_link
         else:
             self.img_dir = "../../data/albi/image"
-        
-        if annotation_file and (annotation_file.startswith("http") or annotation_file.startswith("https")):
+
+        if annotation_file and (
+            annotation_file.startswith("http") or annotation_file.startswith("https")
+        ):
             response = requests.get(annotation_file)
             response.raise_for_status()  # Ensure the request was successful
             csv_content = response.content.decode("utf-8")
@@ -36,7 +42,7 @@ class Albi(Dataset):
             else:
                 self.annotation_file = "../../data/albi/anotasi.csv"
             csv_file = open(self.annotation_file, "r")
-            
+
         self.transform = transform
 
         self.image_paths = []
