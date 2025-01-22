@@ -12,3 +12,4 @@ black[jupyter]
 matplotlib
 numpy
 pandas
+ipykernel

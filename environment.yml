@@ -18,6 +18,7 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
+  - ipykernel
   - pip
   - pip:
       - -r requirements.txt
