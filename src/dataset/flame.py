@@ -2,6 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from collections.abc import Callable
 from dataset.base import BaseDataset
+from dataset.base import BaseMultiDataset
 
 
 class FlameRGB(BaseDataset):
@@ -79,10 +80,10 @@ class FlameThermal(BaseDataset):
     # pylint: enable=duplicate-code
 
 
-class FlameSatelite(BaseDataset):
+class FlameSatelite(BaseMultiDataset):
     def __init__(
         self,
-        root: str | Path = "../data/flame_satelite",
+        root: str | Path = "../data/flame_satellite",
         transform: Callable | None = None,
         download: bool = False,
         urls: dict[str, str] | None = None,
@@ -97,8 +98,8 @@ class FlameSatelite(BaseDataset):
     # pylint: disable=duplicate-code
     def get_default_urls(self) -> dict[str, str]:
         return {
-            "data_url": "https://drive.google.com/uc?id=1hnKYqt39-of01fsAtpWtwUuBM9NOkXYu",
-            "annotation_url": "https://drive.google.com/uc?id=16CQR8zzYsR6qqwfCfSKU5JlUN9uOlp7j",
+            "data_url": "https://drive.google.com/uc?id=1QXWOIxrv4Q2CccWsafpDh7miASZqWDbY",
+            "annotation_url": "https://drive.google.com/uc?id=1KXJzjXNguRnT59-XlQhLomT-xfsjTYis",
         }
 
     # pylint: enable=duplicate-code
