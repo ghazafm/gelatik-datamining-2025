@@ -77,3 +77,28 @@ class FlameThermal(BaseDataset):
         }
 
     # pylint: enable=duplicate-code
+
+
+class FlameSatelite(BaseDataset):
+    def __init__(
+        self,
+        root: str | Path = "../data/flame_satelite",
+        transform: Callable | None = None,
+        download: bool = False,
+        urls: dict[str, str] | None = None,
+    ):
+        super().__init__(
+            root=root,
+            transform=transform,
+            download=download,
+            urls=urls,
+        )
+
+    # pylint: disable=duplicate-code
+    def get_default_urls(self) -> dict[str, str]:
+        return {
+            "data_url": "https://drive.google.com/uc?id=1hnKYqt39-of01fsAtpWtwUuBM9NOkXYu",
+            "annotation_url": "https://drive.google.com/uc?id=16CQR8zzYsR6qqwfCfSKU5JlUN9uOlp7j",
+        }
+
+    # pylint: enable=duplicate-code
