@@ -2,6 +2,7 @@ import os
 import shutil
 import zipfile
 from pathlib import Path
+import torch
 
 
 def check_integrity(img_dir, annotation_file):
@@ -47,3 +48,19 @@ def extract_zip(output_dir, zip_path: Path) -> None:
 
 def extra_repr(root, transform) -> str:
     return f"Root: {root}, Transform: {transform}"
+
+
+def collate_fn(batch):
+    images = []
+    bboxes = []
+    
+    for img, bbox in batch:
+        if img is not None:  # Skip corrupted images
+            images.append(img)
+            bboxes.append(bbox)
+    
+    # Stack images into a batch
+    images = torch.stack(images, dim=0)
+    
+    # Return images and a list of bounding boxes (not stacked)
+    return images, bboxes

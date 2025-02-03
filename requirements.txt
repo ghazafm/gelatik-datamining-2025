@@ -14,3 +14,5 @@ numpy
 pandas
 ipykernel
 gdown
+opencv-python
+roboflow

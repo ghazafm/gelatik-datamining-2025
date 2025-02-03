@@ -181,3 +181,7 @@ credentials.json
 data/*
 
 **.DS_Store
+
+**/*.pt
+**/runs/**
+dataset/*
