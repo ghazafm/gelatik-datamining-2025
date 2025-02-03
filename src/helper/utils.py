@@ -1,8 +1,8 @@
 import os
 import shutil
 import zipfile
-import torch
 from pathlib import Path
+import torch
 
 
 def check_integrity(img_dir, annotation_file):
