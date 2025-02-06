@@ -1,5 +1,5 @@
 path: .
-train: train/images
-val: valid/images
+train: C:\Users\fadhil\Documents\Vscode\Github\gelatik-datamining-2025\data\flame_satellite\train
+val: C:\Users\fadhil\Documents\Vscode\Github\gelatik-datamining-2025\data\flame_satellite\valid
 names:
   0: fire
