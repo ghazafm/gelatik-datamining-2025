@@ -1,4 +1,4 @@
-path: .
+path: flame_satellite
 train: train/images
 val: valid/images
 names:
